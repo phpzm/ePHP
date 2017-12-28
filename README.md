@@ -4,6 +4,12 @@ O `Essentials PHP` é um conjunto simples de funções, classes e configuraçõe
 
 Você pode aplicar o `Essentials PHP` à qualquer projeto PHP que você tenha. Veremos mais pra frente as vantagens que você pode obter com isso.
 
+## Motivação
+
+Existe hoje uma lacuna muito grande entre usar o PHP diretamente ou adotar algum framework. Não há entre estes dois pontos um meio termo acessível e o que eu tenho visto por ai é o uso do PHP sem o mínimo de segurança e/ou organização quando não se usa um FW (framework), embora a adoção destes tambm não garanta qualidade. o ePHP entre nesse meio ai e entrega uma forma simples e de qualidade para usar o PHP sem muitas firulas e com a opção de mexer no seu fluxo de trabalho só à medida que você precisar.
+
+A ideia é eliminar do desenvolvimento com PHP acessos diretos a arquivos e o famoso `include db.inc.php`. O PHP já deixou isso para trás, mas falta ferramentas para auxiliar os dev's a seguirem adiante também.
+
 ## Por onde começar
 
 Faça download do [arquivo]( https://github.com/phpzm/essentials/archive/master.zip) que contém a estrutura do projeto.
