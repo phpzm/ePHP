@@ -1,5 +1,28 @@
 <?php
 
+if (!function_exists('filter')) {
+    /**
+     * @param int $source
+     * @param string $index
+     * @return mixed
+     */
+    function filter(int $source, string $index)
+    {
+        return filter_input($source, $index);
+    }
+}
+
+if (!function_exists('server')) {
+    /**
+     * @param string $index
+     * @return mixed
+     */
+    function server(string $index)
+    {
+        return filter(INPUT_SERVER, $index);
+    }
+}
+
 if (!function_exists('env')) {
     /**
      * @param string $property
