@@ -31,7 +31,7 @@ if (!function_exists('env')) {
      */
     function env($property, $default = null)
     {
-        $filename = path(true, '.env');
+        $filename = path(dirname(__DIR__), '.env');
         if (!file_exists($filename) || !is_file($filename)) {
             return $default;
         }
