@@ -1,0 +1,27 @@
+# v2 syntax
+version: '2'
+
+services:
+
+  essentials.mysql:
+    image: ambientum/mysql:5.7
+    container_name: essentials.mysql
+    volumes:
+      - ./.docker/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=database
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+
+  essentials:
+    image: ambientum/php:7.0-nginx
+    container_name: essentials
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "9000:8080"
+    links:
+      - essentials.mysql

@@ -1,0 +1,7 @@
+/.idea
+/.env
+/docker-compose.yml
+/vendor
+/composer.phar
+
+*.cache
