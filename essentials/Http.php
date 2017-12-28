@@ -26,6 +26,28 @@ abstract class Http
     /**
      * @param string $index
      * @return mixed
+     */
+    public static function file($index)
+    {
+        $files = static::files();
+        if (isset($files[$index])) {
+            return $files[$index];
+        }
+        return null;
+    }
+
+    /**
+     * @return array
+     * @SuppressWarnings("SuperGlobals")
+     */
+    public static function files()
+    {
+        return $_FILES;
+    }
+
+    /**
+     * @param string $index
+     * @return mixed
      * @SuppressWarnings("SuperGlobals")
      */
     public static function all($index = null)
