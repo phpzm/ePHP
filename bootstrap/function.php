@@ -1,50 +1,5 @@
 <?php
 
-if (!function_exists('server')) {
-    /**
-     * @param string $index
-     * @return mixed
-     */
-    function server(string $index)
-    {
-        return filter(INPUT_SERVER, $index);
-    }
-}
-
-if (!function_exists('post')) {
-    /**
-     * @param string $index
-     * @return mixed
-     */
-    function post(string $index)
-    {
-        return filter(INPUT_POST, $index);
-    }
-}
-
-if (!function_exists('get')) {
-    /**
-     * @param string $index
-     * @return mixed
-     */
-    function get(string $index)
-    {
-        return filter(INPUT_GET, $index);
-    }
-}
-
-if (!function_exists('filter')) {
-    /**
-     * @param int $source
-     * @param string $index
-     * @return mixed
-     */
-    function filter(int $source, string $index)
-    {
-        return filter_input($source, $index);
-    }
-}
-
 if (!function_exists('env')) {
     /**
      * @param string $property
@@ -61,7 +16,7 @@ if (!function_exists('env')) {
         if (!is_array($properties)) {
             return $default;
         }
-        return in($properties, $property);
+        return get($properties, $property);
     }
 }
 
@@ -133,17 +88,14 @@ if (!function_exists('coalesce')) {
     }
 }
 
-/**
- * @SuppressWarnings("ShortMethodName")
- */
-if (!function_exists('in')) {
+if (!function_exists('get')) {
     /**
      * @param mixed $value
      * @param string|int $property (null)
      * @param mixed $default (null)
      * @return mixed
      */
-    function in($value, $property = null, $default = null)
+    function get($value, $property = null, $default = null)
     {
         if (is_null($property)) {
             return $default;
@@ -230,9 +182,9 @@ if (!function_exists('error_message')) {
         if (is_array($error->getTrace())) {
             $pieces[] = '~';
             foreach ($error->getTrace() as $item) {
-                $class = in($item, 'class');
-                $function = in($item, 'function');
-                $pieces[] = $line("`{$class}::{$function}`", in($item, 'file'), in($item, 'line'));
+                $class = get($item, 'class');
+                $function = get($item, 'function');
+                $pieces[] = $line("`{$class}::{$function}`", get($item, 'file'), get($item, 'line'));
             }
         }
         return implode(PHP_EOL, $pieces);
