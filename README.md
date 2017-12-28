@@ -6,7 +6,7 @@ Você pode aplicar o `Essentials PHP` à qualquer projeto PHP que você tenha. V
 
 ## Motivação
 
-Existe hoje uma lacuna muito grande entre usar o PHP diretamente ou adotar algum framework. Não há entre estes dois pontos um meio termo acessível e o que eu tenho visto por ai é o uso do PHP sem o mínimo de segurança e/ou organização quando não se usa um FW (framework), embora a adoção destes tambm não garanta qualidade. o ePHP entre nesse meio ai e entrega uma forma simples e de qualidade para usar o PHP sem muitas firulas e com a opção de mexer no seu fluxo de trabalho só à medida que você precisar.
+Existe hoje uma lacuna muito grande entre usar o PHP diretamente ou adotar algum framework. Não há entre estes dois pontos um meio termo acessível e o que eu tenho visto por ai é o uso do PHP sem o mínimo de segurança e/ou organização quando não se usa um FW (framework) - embora a adoção destes também não garanta totalmente qualidade nem segurança para o projeto. o ePHP entre nesse meio ai e entrega uma forma simples e de qualidade para usar o PHP sem muitas firulas e com a opção de mexer no seu fluxo de trabalho só à medida que você precisar.
 
 A ideia é eliminar do desenvolvimento com PHP acessos diretos a arquivos e o famoso `include db.inc.php`. O PHP já deixou isso para trás, mas falta ferramentas para auxiliar os dev's a seguirem adiante também.
 
@@ -27,10 +27,11 @@ Pronto! Agora você já está pronto para rodar o projeto.
 Você pode optar por:
 - Usar o servidor embutido no PHP: use o comando `php -S localhost:8080 -t public_html/` para iniciar o projeto;
 
-- Usar o Nginx através do docker-compose: crie uma cópia do `docker-compose.yml.sample` removendo o `.sample` do fim do nome do arquivo.
-Feito isso basta rodar `docker-compose up`.
+- Usar o Nginx através do docker-compose: crie uma cópia do `docker-compose.yml.sample` removendo o `.sample` do fim do nome do arquivo. Feito isso basta rodar `docker-compose up`.
 
-Qualquer um dois dois caminhos vão te levar a acessar o "Hello World!" em [http://localhost:8080](http://localhost:8080), e, obviamente, você pode mudar essas configurações.
+- Usar o que já está acostumado: seguindo por aqui imagino que você saiba onde colocar os arquivos e como acessar eles
+
+Qualquer um dois dois primeiros caminhos vão te levar a acessar o "Hello World!" em [http://localhost:8080](http://localhost:8080), e, obviamente, você pode mudar essas configurações. Caso tenha optado por usar o que já está acostumado a URL de acesso será no formato que você está familiarizado.
 
 ## Pra que isso tudo gente?!
 
