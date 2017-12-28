@@ -1,5 +1,6 @@
 <html>
 <head>
+  <title>Demo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css"
         integrity="sha256-v5YlJGWVLS5hQ+o48fBzCKHEP2vMNsku57x3CosYykc=" crossorigin="anonymous"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -7,7 +8,9 @@
 </head>
 <body>
 <section class="container">
+  <br>
   <h1><?php out('Você está acessando o host <b>', Url::host(), Url::path(), '</b>', ' from ', address()); ?></h1>
+  <hr>
   <pre><?php out(Http::all()) ?></pre>
   <pre><?php out(Http::file('resume')) ?></pre>
   <form class="column" method="post" enctype="multipart/form-data">
