@@ -6,7 +6,7 @@ if (!function_exists('filter')) {
      * @param string $index
      * @return mixed
      */
-    function filter(int $source, string $index)
+    function filter($source, $index)
     {
         return filter_input($source, $index);
     }
@@ -17,7 +17,7 @@ if (!function_exists('server')) {
      * @param string $index
      * @return mixed
      */
-    function server(string $index)
+    function server($index)
     {
         return filter(INPUT_SERVER, $index);
     }
@@ -71,7 +71,7 @@ if (!function_exists('parse')) {
      * @param mixed $value
      * @return string
      */
-    function parse($value): string
+    function parse($value)
     {
         switch (gettype($value)) {
             case TYPE_BOOLEAN:
@@ -186,13 +186,13 @@ if (!function_exists('guid')) {
 if (!function_exists('error_message')) {
     /**
      * @param Throwable $error
-     * @return array
+     * @return string
      */
-    function error_message(Throwable $error): string
+    function error_message(Throwable $error)
     {
         $pieces = [];
         $line = function ($message, $file, $line) {
-            $file = str_replace(dirname(__DIR__, 4), '', $file);
+            $file = str_replace(dirname(__DIR__, 2), '', $file);
             return $message . ' on ' . $file . ' in ' . $line;
         };
 
@@ -242,7 +242,7 @@ if (!function_exists('read')) {
      * @param string $options
      * @return string
      */
-    function read(string $prompt = '$ ', string $options = ''): string
+    function read($prompt = '$ ', $options = '')
     {
         if ($options) {
             $prompt = "{$prompt} {$options}\$ ";
@@ -272,5 +272,24 @@ if (!function_exists('type')) {
     function type($value, string $type)
     {
         return gettype($value) === $type;
+    }
+}
+
+/**
+ * @SuppressWarnings("SuperGlobals")
+ */
+if (!function_exists('address')) {
+    /**
+     * @return string
+     */
+    function address()
+    {
+        $sources = ['REMOTE_ADDR', 'HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP'];
+        foreach ($sources as $source) {
+            if (isset($_SERVER[$source])) {
+                return $_SERVER[$source];
+            }
+        }
+        return 'x.x.x.x';
     }
 }

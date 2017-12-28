@@ -5,12 +5,13 @@
 </head>
 <body>
 <section class="container">
-  <h1><?php out('Você está acessando o host <b>', Url::host(), Url::path(), '</b>. '); ?></h1>
-  <div class="column">
+  <h1><?php out('Você está acessando o host <b>', Url::host(), Url::path(), '</b>', ' from ', address()); ?></h1>
+  <pre><?php out(Http::all()) ?></pre>
+  <form class="column" method="post">
     <div class="field">
       <label class="label">Form label</label>
       <div class="control">
-        <input class="input" type="text" placeholder="Input">
+        <input class="input" type="text" name="input" placeholder="Input">
       </div>
     </div>
     <div class="field">
@@ -24,13 +25,13 @@
     </div>
     <div class="field">
       <p class="control">
-        <textarea class="textarea" placeholder="Textarea"></textarea>
+        <textarea class="textarea" name="textarea" placeholder="Textarea"></textarea>
       </p>
     </div>
     <div class="field">
       <p class="control">
         <label class="checkbox">
-          <input type="checkbox">
+          <input type="checkbox" name="checkbox">
           Checkbox
         </label>
       </p>
@@ -38,21 +39,21 @@
     <div class="field">
       <p class="control">
         <label class="radio">
-          <input type="radio" name="question">
+          <input type="radio" name="radio">
           Radio
         </label>
         <label class="radio">
-          <input type="radio" name="question">
+          <input type="radio" name="radio">
           Buttons
         </label>
       </p>
     </div>
     <div class="field">
       <p class="control">
-        <a class="button is-link">Button</a>
+        <button class="button is-link">Button</button>
       </p>
     </div>
-  </div>
+  </form>
 </section>
 </body>
 </html>
