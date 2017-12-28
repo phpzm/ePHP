@@ -24,7 +24,7 @@ class ePHP
         if ($root) {
             $filename = realpath(path($root, $file));
         }
-        if (!file_exists($filename)) {
+        if (!file_exists($filename) || is_dir($filename)) {
             return null;
         }
         ob_start();
