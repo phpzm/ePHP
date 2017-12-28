@@ -1,8 +1,8 @@
-# Essentials PHP
+# Essentials PHP (ePHP)
 
 O `Essentials PHP` é um conjunto simples de funções, classes e configurações básicas para simplificar a vida do desenvolvedor.
 
-Você pode aplicar o `PHP Essentials` à qualquer projeto PHP que você tenha. Veremos mais pra frente as vantagens que você pode obter com isso.
+Você pode aplicar o `Essentials PHP` à qualquer projeto PHP que você tenha. Veremos mais pra frente as vantagens que você pode obter com isso.
 
 ## Por onde começar
 
